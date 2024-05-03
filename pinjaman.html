@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#ffa500">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PINJAMAN SAYA</title>
+<style>
+.container {
+    background-color: #;
+    padding: 15px;
+    width: 352px;
+    margin-left: -7px;
+    display: flex;
+    margin-top: -98px;
+    align-items: center;
+    border-bottom: 5px solid #ffa550; /* garis hijau tua */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Jarak antara logo dan teks */
+  }
+  
+  .logo {
+    width: 50px; /* Ukuran logo */
+    height: auto;
+    margin-right: 10px; /* Jarak antara logo dan garis bawah */
+    margin-left: 20px; /* Geser logo lebih ke kiri */
+    color: #808000;
+  }
+  
+  .nama {
+    font-size: 20px; /* Ukuran teks nama yang lebih kecil */
+    color: #ffa500; /* Warna teks hitam */
+  }
+
+  .garis-bawah, .box-lapisan {
+    flex-grow: 10; /* Memungkinkan elemen untuk menyesuaikan lebar yang tersisa */
+    height: 10px; /* Tinggi box lapisan */
+    background-color: #ffffff; /* Warna lapisan hijau muda */
+  }
+  
+  .box-lapisan {
+    margin-top: -10px; /* Mendorong lapisan hijau ke atas */
+    margin-bottom: -10px; /* Mendorong lapisan hijau ke atas */
+    margin-right: -10px; /* Memperpanjang lapisan hijau ke kanan */
+    margin-left: -10px; /* Memperpanjang lapisan hijau ke kiri */
+  }
+  .garis-bawa2h, .box-lapisan {
+    flex-grow: 10; /* Memungkinkan elemen untuk menyesuaikan lebar yang tersisa */
+    height: 10px; /* Tinggi box lapisan */
+    background-color: #ffffff; /* Warna lapisan hijau muda */
+  }
+#gambar-atas {
+      margin-bottom: 20px;
+      padding: 0; /* Menghapus padding */
+    }
+
+    #gambar-atas img {
+      width: 100%; /* Menyesuaikan lebar gambar dengan lebar parent */
+      height: auto; /* Memastikan ketinggian menyesuaikan dengan lebar */
+      margin-top:-10px;
+    }
+
+  .button {
+    display: inline-block;
+    padding: 20px 20px;
+    background-color: #008000;
+    color: #ccc;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 370px;
+    font-weight: bold;
+    margin-top:28px;
+  }
+
+  .icon-left,
+  .icon-right {
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .icon-left img,
+  .icon-right img {
+    width: 80px; /* Sesuaikan ukuran ikon di sini */
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon-left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .icon-right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .button-text {
+    position: relative;
+    z-index: 0;
+    margin-top:-20px;
+  }
+  .content {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 20px;
+    margin-top:-20px;
+    color:#008000;
+  }
+  
+  .loading-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Mulai tersembunyi */
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+  <div class="logo-container">
+    <div class="box-lapisan"></div>
+    <img class="logo" src="https://i.ibb.co/PtwMwVv/1000006288-removebg-preview.png" alt="Logo">
+  </div>
+  <div class="nama">
+    DINI WAHYU NINGTYAS
+  </div>
+  <div class="garis-bawah"></div>
+</div><br>
+<div class="overlay">
+  <div class="content">
+    <p>Total Yang Perlu Pembayaran</p>
+    <h2>Rp. 3.600.000</h2>
+    <!-- Tambahkan informasi total pembayaran di sini -->
+<div class="garis-bawa2h"></div>
+  <div id="gambar-atas">
+    <img src="https://i.ibb.co/Rh7RJZT/Screenshot-20240504-023706-Ada-Dana.jpg" alt="Gambar Atas">
+  </div>
+
+<button class="button" onclick="handleButtonClick()" disabled>
+  <span class="icon-left" onclick="redirectToLoanPage()">
+    <!-- Letakkan ikon di sini -->
+    <img src="https://i.ibb.co/fSNNpX4/1000004401-removebg-preview.png" alt="Icon Kiri">
+  </span>
+  <span class="button-text">Kredit Pinjaman</span>
+  <span class="icon-right" onclick="redirectToSelectionPage()">
+    <!-- Letakkan ikon di sini -->
+    <img src="https://i.ibb.co/Q9NqWQK/1000004368-removebg-preview.png" alt="Icon Kanan">
+  </span>
+</button>
+
+<script>
+  function redirectToLoanPage() {
+    // Ganti URL dengan halaman pinjaman yang sesuai
+    window.location.href = "pinjaman.html";
+  }
+
+  function redirectToSelectionPage() {
+    // Ganti URL dengan halaman pilihan yang sesuai
+    window.location.href = "pilihan.html";
+  }
+
+  function handleButtonClick() {
+    // Fungsi yang akan dijalankan saat tombol diklik
+    alert("Tombol diklik!");
+  }
+
+  function showLoading() {
+    var loadingIcon = document.getElementById('loading-icon');
+    loadingIcon.style.display = 'block'; // Menampilkan loading.gif
+
+    // Tunggu selama 4 detik sebelum menuju ke halaman berikutnya
+    setTimeout(function() {
+      // Sembunyikan loading.gif setelah 4 detik
+      loadingIcon.style.display = 'none';
+
+      // Ganti URL dengan halaman yang sesuai setelah loading selesai
+      // Contoh:
+      // window.location.href = 'halaman_baru.html';
+    }, 4000); // 4 detik
+  }
+</script>
+
+<div class="loading-icon">
+  <img src="https://raw.githubusercontent.com/Sainilah9/Sainilah9.github.io/main/hug.gif" alt="Loading...">
+</div>
+
+</body>
+  </html>
